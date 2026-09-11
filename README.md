@@ -25,9 +25,19 @@ cd personal-portfolio
 
 # Install dependencies
 npm install
+```
 
-# Start development server
+### Usage
+
+```bash
+# Run development server
 npm run dev
+
+# Compile production build
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
 ## License
