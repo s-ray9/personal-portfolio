@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/og-image.png" alt="Banner graphic featuring the name s_ray9 and the titles systems developer and game developer" width="100%" style="max-width: 850px; border-radius: 8px; display: block; margin: 0 auto 16px auto;">
+<img src="public/og-image.png" alt="s_ray9: systems developer, game developer." width="850">
 
 # Personal Portfolio
 
