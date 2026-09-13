@@ -1,27 +1,14 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "file",
-  "editor.wordWrap": "on",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll.eslint": "explicit"
   },
-  "files.insertFinalNewline": true,
-  "files.trimTrailingWhitespace": true,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
   "files.associations": {
     "*.css": "tailwindcss"
-  },
-  "files.exclude": {
-    "**/.astro": true,
-    "**/.DS_Store": true
-  },
-  "search.exclude": {
-    "**/.astro": true,
-    "**/dist": true,
-    "**/node_modules": true
-  },
-  "[astro]": {
-    "editor.defaultFormatter": "astro-build.astro-vscode"
   }
 }
