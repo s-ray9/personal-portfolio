@@ -19,9 +19,9 @@ const copyrightTimeline =
 
   <div class="p-footer-padding">
     <div
-      class="mx-auto flex max-w-7xl w-full flex-col items-center gap-4 text-center sm:flex-row sm:justify-between"
+      class="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 text-center sm:flex-row sm:justify-between"
     >
-      <p class="text-fg-secondary text-xs">
+      <p class="text-xs text-fg-secondary">
         {`© ${copyrightTimeline} ${siteName}`}
       </p>
 
@@ -29,7 +29,7 @@ const copyrightTimeline =
         <div class="flex flex-wrap items-center justify-center gap-4">
           <NavItems
             items={siteConfig.navigation.footer}
-            itemClass="text-fg-secondary hover:text-fg-primary text-sm font-medium tracking-tight hover:text-accent"
+            itemClass="p-2 rounded-lg text-fg-secondary hover:text-fg-primary text-sm font-medium tracking-tight hover:text-shadow-accent"
           />
         </div>
       </nav>

@@ -1,3 +1,8 @@
+export interface ImageInfo {
+  readonly src: string;
+  readonly alt: string;
+}
+
 export interface NavItem {
   readonly title: string;
   readonly href: string;
@@ -19,7 +24,7 @@ export interface SiteConfig {
   readonly lang: string;
   readonly themeColor: string;
   readonly backgroundColor: string;
-  readonly ogImage: string;
+  readonly ogImage: ImageInfo;
 
   readonly developer: {
     readonly name: string;
@@ -50,7 +55,10 @@ export const siteConfig: SiteConfig = {
   lang: "en",
   themeColor: "#1e272e",
   backgroundColor: "#0a0a0a",
-  ogImage: "/og-image.png",
+  ogImage: {
+    src: "/og-image.png",
+    alt: "s_ray9: systems developer, game developer.",
+  },
 
   developer: {
     name: DEVELOPER_NAME,

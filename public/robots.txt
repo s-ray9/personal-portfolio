@@ -1,4 +1,3 @@
 User-agent: *
-Allow: /
 
 Sitemap: https://s-ray9.vercel.app/sitemap-index.xml
