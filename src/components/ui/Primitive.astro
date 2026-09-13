@@ -9,7 +9,7 @@ type Props<Tag extends HTMLTag = "a"> = Polymorphic<{
 const { as: Tag = "a", class: className, ...props } = Astro.props;
 
 const baseStyles =
-  "cursor-pointer p-1 rounded-sm outline-hidden transition-all duration-150 ease-out focus-visible:ring-2 focus-visible:ring-fg-primary focus-visible:text-fg-primary focus-visible:text-accent";
+  "cursor-pointer outline-hidden transition-all duration-150 ease-out focus-visible:ring-2 focus-visible:ring-fg-primary focus-visible:text-fg-primary focus-visible:text-shadow-accent";
 ---
 
 <Tag {...props} class={cn(baseStyles, className)}>
