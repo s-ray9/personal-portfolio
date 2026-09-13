@@ -4,27 +4,24 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="404 Not Found">
-  <section
-    class="mx-auto flex max-w-xl flex-col items-center gap-4 text-center"
-  >
-    <h1>404</h1>
+  <section class="flex flex-1 flex-col items-center justify-center gap-4 text-center">
+    <h1 class="uppercase">
+      <span class="block text-shadow-accent">404</span>
+      <span class="mt-2 block text-sm tracking-widest text-fg-secondary">
+        Not Found
+      </span>
+    </h1>
 
-    <span class="text-xs font-bold uppercase tracking-widest text-accent">
-      Not Found
-    </span>
-
-    <p class="text-fg-secondary">
+    <p class="max-w-md text-fg-secondary">
       Sorry, we couldn't find the page you were looking for.
     </p>
 
-    <div class="w-full">
-      <Primitive
-        as="a"
-        href="/"
-        class="inline-block cursor-pointer rounded-xl border border-border px-8 py-4 text-sm font-medium tracking-tight text-fg-secondary hover:text-fg-primary hover:text-accent"
-      >
-        Back home
-      </Primitive>
-    </div>
+    <Primitive
+      as="a"
+      href="/"
+      class="button px-6 py-3 text-fg-secondary hover:text-fg-primary hover:text-shadow-accent"
+    >
+      Go Home
+    </Primitive>
   </section>
 </Layout>
