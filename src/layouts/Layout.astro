@@ -3,42 +3,42 @@ import "@fontsource/inter/400.css";
 import "@fontsource/orbitron/900.css";
 import "@styles/global.css";
 
-import { siteConfig } from "@config/site";
+import { type ImageInfo, siteConfig } from "@config/site";
 
+import Liquid from "@components/canvas/Liquid/index.astro";
 import Footer from "@components/layout/Footer.astro";
 import Header from "@components/layout/Header.astro";
 
 interface Props {
   title?: string;
   description?: string;
-  image?: string;
+  ogImage?: ImageInfo;
 }
 
 const {
   title = siteConfig.title,
   description = siteConfig.description,
-  image = siteConfig.ogImage,
+  ogImage = siteConfig.ogImage,
 } = Astro.props;
 
 const baseSiteUrl = Astro.site?.href ?? "http://localhost:4321";
 const canonicalUrl = new URL(Astro.url.pathname, baseSiteUrl);
-const ogImageUrl = image.startsWith("http")
-  ? new URL(image)
-  : new URL(image, baseSiteUrl);
+const ogImageUrl = ogImage.src.startsWith("http")
+  ? new URL(ogImage.src)
+  : new URL(ogImage.src, baseSiteUrl);
 ---
 
 <!doctype html>
 <html lang={siteConfig.lang} class="scroll-smooth motion-reduce:scroll-auto">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width" />
 
     <meta name="theme-color" content={siteConfig.themeColor} />
     <meta name="apple-mobile-web-app-title" content={siteConfig.name} />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -52,6 +52,7 @@ const ogImageUrl = image.startsWith("http")
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={ogImage.alt} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalUrl} />
@@ -60,15 +61,13 @@ const ogImageUrl = image.startsWith("http")
     <meta name="twitter:image" content={ogImageUrl} />
   </head>
 
-  <body
-    class="relative isolate flex min-h-dvh flex-col overflow-x-hidden bg-bg-primary text-fg-primary antialiased"
-  >
+  <body class="isolate flex flex-col">
+    <Liquid />
+
     <Header />
 
-    <main
-      class="flex flex-1 items-center justify-center w-full px-page-gutter py-page-gutter pt-header-clearance"
-    >
-      <div class="w-full max-w-7xl">
+    <main class="flex w-full flex-1 justify-center px-page-gutter py-page-spacing pt-header-clearance">
+      <div class="flex w-full max-w-7xl flex-1 flex-col">
         <slot />
       </div>
     </main>

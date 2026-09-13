@@ -1,25 +1,26 @@
 ---
 import { siteConfig } from "@config/site";
 
+import Logo from "@components/branding/Logo.astro";
 import NavItems from "@components/navigation/NavItems.astro";
 import Primitive from "@components/ui/Primitive.astro";
 import StatusDot from "@components/ui/StatusDot.astro";
 ---
 
 <header
-  class="fixed inset-x-page-gutter top-page-gutter z-sticky flex justify-center pointer-events-none"
+  class="pointer-events-none fixed inset-x-page-gutter top-page-gutter z-sticky flex justify-center"
 >
   <nav
-    class="pointer-events-auto flex min-h-header-height w-full max-w-7xl items-center justify-between px-container-padding surface-glass"
+    class="pointer-events-auto flex min-h-header-height w-full max-w-7xl items-center justify-between surface-glass px-container-padding"
     aria-label="Main"
   >
     <Primitive
       as="a"
       href="/"
-      class="inline-flex items-center gap-4 text-sm font-medium tracking-tight text-fg-primary text-accent whitespace-nowrap"
+      class="inline-flex items-center gap-4 rounded-lg p-2 text-sm font-medium tracking-tight whitespace-nowrap text-fg-primary text-shadow-accent"
       aria-current={Astro.url.pathname === "/" ? "page" : undefined}
     >
-      <img src="/favicon.svg" alt="" class="size-6" aria-hidden="true" />
+      <Logo class="size-6 scheme-dark" />
       {siteConfig.name}
       <StatusDot />
     </Primitive>
@@ -28,7 +29,7 @@ import StatusDot from "@components/ui/StatusDot.astro";
       <div class="hidden gap-4 md:flex">
         <NavItems
           items={siteConfig.navigation.main}
-          itemClass="text-sm font-medium tracking-tight text-fg-secondary whitespace-nowrap hover:text-fg-primary hover:text-accent"
+          itemClass="p-2 rounded-lg text-sm font-medium tracking-tight text-fg-secondary whitespace-nowrap hover:text-fg-primary hover:text-shadow-accent"
         />
       </div>
 
@@ -36,7 +37,7 @@ import StatusDot from "@components/ui/StatusDot.astro";
         as="button"
         type="button"
         data-menu-trigger
-        class="cursor-pointer text-sm font-medium tracking-tight text-fg-secondary whitespace-nowrap hover:text-fg-primary hover:text-accent md:hidden"
+        class="cursor-pointer rounded-lg p-2 text-sm font-medium tracking-tight whitespace-nowrap text-fg-secondary hover:text-fg-primary hover:text-shadow-accent md:hidden"
         aria-expanded="false"
         aria-controls="mobile-menu-drawer"
       >
