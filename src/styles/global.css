@@ -39,15 +39,23 @@ a {
   text-decoration: none;
 }
 
-@utility text-accent {
-  text-shadow: 0 0 --spacing(2) var(--color-brand-500);
-}
-
 @utility surface-glass {
   border: 1px solid --alpha(var(--color-border-primary) / 25%);
   border-radius: var(--radius-2xl);
   background: --alpha(var(--color-bg-secondary) / 25%);
   backdrop-filter: blur(var(--blur-xl));
+}
+
+@utility button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid --alpha(var(--color-border-primary) / 25%);
+  border-radius: var(--radius-lg);
+  background: --alpha(var(--color-bg-secondary) / 25%);
+  backdrop-filter: blur(var(--blur-xl));
+  font-size: var(--text-sm);
+  letter-spacing: var(--tracking-tight);
 }
 
 @utility pt-header-clearance {
@@ -57,7 +65,7 @@ a {
   );
 }
 
-/* 
+/*
 * {
   outline: 1px solid rgba(255, 0, 0, 0.3) !important;
   background: rgba(255, 0, 0, 0.02) !important;

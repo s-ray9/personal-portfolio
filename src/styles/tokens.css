@@ -55,8 +55,11 @@
     Orbitron, ui-sans-serif, system-ui, sans-serif, Apple Color Emoji,
     Segoe UI Emoji;
 
-  --spacing-page-gutter: 1rem;
-  --spacing-container-padding: 1rem;
+  --text-shadow-accent: 0 0 --spacing(2) var(--color-brand-500);
+
+  --spacing-page-spacing: --spacing(4);
+  --spacing-page-gutter: --spacing(4);
+  --spacing-container-padding: --spacing(4);
 
   --spacing-header-height: 4rem;
   --spacing-header-offset: 1rem;
