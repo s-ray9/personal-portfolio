@@ -9,7 +9,7 @@ The open-source repository for my personal portfolio website, showcasing my work
 </p>
 
 <p align="center">
-  <a href="s-ray9.vercel.app"><img src="https://img.shields.io/badge/Vercel-live-success?style=flat-square&logo=vercel&logoColor=white&labelColor=000000" alt="Vercel"></a>
+  <a href="https://s-ray9.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Vercel-live-success?style=flat-square&logo=vercel&logoColor=white&labelColor=000000" alt="Vercel"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/s-ray9/personal-portfolio?style=flat-square&color=blue&label=License&labelColor=24292e" alt="License"></a>
 </p>
 
