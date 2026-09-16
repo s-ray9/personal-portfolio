@@ -12,19 +12,21 @@ const { items, itemClass } = Astro.props;
 const currentPath = Astro.url.pathname;
 ---
 
-{items.map((item) => {
-  const isCurrent =
-    currentPath === item.href ||
-    (item.href !== "/" && currentPath.startsWith(item.href));
+{
+  items.map((item) => {
+    const isCurrent =
+      currentPath === item.href ||
+      (item.href !== "/" && currentPath.startsWith(item.href));
 
-  return (
-    <Primitive
-      as="a"
-      href={item.href}
-      class={itemClass}
-      aria-current={isCurrent ? "page" : undefined}
-    >
-      {item.title}
-    </Primitive>
-  );
-})}
+    return (
+      <Primitive
+        as="a"
+        href={item.href}
+        class={itemClass}
+        aria-current={isCurrent ? "page" : undefined}
+      >
+        {item.title}
+      </Primitive>
+    );
+  })
+}
