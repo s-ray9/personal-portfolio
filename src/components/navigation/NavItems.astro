@@ -1,7 +1,6 @@
 ---
-import { type NavItem } from "@config/site";
-
 import Primitive from "@components/ui/Primitive.astro";
+import { type NavItem } from "@config/site";
 
 interface Props {
   readonly items: readonly NavItem[];
@@ -13,20 +12,22 @@ const currentPath = Astro.url.pathname;
 ---
 
 {
-  items.map((item) => {
+  items.map(({ label, href, ...props }) => {
     const isCurrent =
-      currentPath === item.href ||
-      (item.href !== "/" && currentPath.startsWith(item.href));
+      currentPath === href || (href !== "/" && currentPath.startsWith(href));
 
     return (
-      <Primitive
-        as="a"
-        href={item.href}
-        class={itemClass}
-        aria-current={isCurrent ? "page" : undefined}
-      >
-        {item.title}
-      </Primitive>
+      <li>
+        <Primitive
+          as="a"
+          href={href}
+          class={itemClass}
+          aria-current={isCurrent ? "page" : undefined}
+          {...props}
+        >
+          {label}
+        </Primitive>
+      </li>
     );
   })
 }

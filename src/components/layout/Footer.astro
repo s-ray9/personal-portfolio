@@ -3,35 +3,36 @@ import NavItems from "@components/navigation/NavItems.astro";
 import Divider from "@components/ui/Divider.astro";
 import { siteConfig } from "@config/site";
 
-const { name: siteName, startYear: siteStartYear } = siteConfig;
+const { name: siteName, copyrightYear, builtWith } = siteConfig;
 
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 
 const copyrightTimeline =
-  siteStartYear === currentYear
+  copyrightYear === currentYear
     ? `${currentYear}`
-    : `${siteStartYear}–${currentYear}`;
+    : `${copyrightYear}–${currentYear}`;
 ---
 
-<footer class="w-full">
+<footer class="w-full text-xs text-fg-secondary">
   <Divider class="w-full" />
 
   <div class="p-footer-padding">
     <div
       class="mx-auto flex w-full max-w-7xl flex-col items-center gap-4 text-center sm:flex-row sm:justify-between"
     >
-      <p class="text-xs text-fg-secondary">
-        {`© ${copyrightTimeline} ${siteName}`}
-      </p>
+      <div class="flex flex-col gap-2 sm:text-left">
+        <p>{`© ${copyrightTimeline} ${siteName}`}</p>
+        <p>{builtWith}</p>
+      </div>
 
-      <nav aria-label="Secondary">
-        <div class="flex flex-wrap items-center justify-center gap-4">
+      <nav aria-label="Footer">
+        <ul class="flex flex-wrap items-center justify-center gap-4">
           <NavItems
             items={siteConfig.navigation.footer}
-            itemClass="p-2 rounded-lg text-fg-secondary hover:text-fg-primary text-sm font-medium tracking-tight hover:text-shadow-accent"
+            itemClass="p-2 rounded-lg text-sm font-medium tracking-tight hover:text-fg-primary hover:text-shadow-accent"
           />
-        </div>
+        </ul>
       </nav>
     </div>
   </div>
