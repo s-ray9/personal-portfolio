@@ -1,10 +1,12 @@
+import type { HTMLAttributes } from "astro/types";
+
 export interface ImageInfo {
   readonly src: string;
   readonly alt: string;
 }
 
-export interface NavItem {
-  readonly title: string;
+export interface NavItem extends HTMLAttributes<"a"> {
+  readonly label: string;
   readonly href: string;
 }
 
@@ -16,7 +18,8 @@ export interface SocialLink {
 
 export interface SiteConfig {
   readonly name: string;
-  readonly startYear: number;
+  readonly copyrightYear: number;
+  readonly builtWith: string;
 
   readonly title: string;
   readonly description: string;
@@ -27,8 +30,11 @@ export interface SiteConfig {
   readonly ogImage: ImageInfo;
 
   readonly developer: {
-    readonly name: string;
-    readonly startYear: number;
+    readonly username: string;
+    readonly firstName: string;
+    readonly lastName: string;
+    readonly preferredName: string;
+    readonly since: number;
   };
 
   readonly navigation: {
@@ -39,18 +45,22 @@ export interface SiteConfig {
   readonly socials: readonly SocialLink[];
 }
 
-const DEVELOPER_NAME = "s_ray9";
-const DEVELOPER_START_YEAR = 2018;
+const FIRST_NAME = "Xinrui";
+const LAST_NAME = "Yang";
+const PREFERRED_NAME = "Sinray";
+const USERNAME = "s_ray9";
+const DEVELOPER_SINCE = 2019;
 
-const SITE_NAME = DEVELOPER_NAME;
-const SITE_START_YEAR = 2026;
+const SITE_NAME = USERNAME;
+const COPYRIGHT_YEAR = 2026;
 
 export const siteConfig: SiteConfig = {
   name: SITE_NAME,
-  startYear: SITE_START_YEAR,
+  copyrightYear: COPYRIGHT_YEAR,
+  builtWith: "Built with Astro, TypeScript, Three.js, and Tailwind CSS.",
 
   title: `${SITE_NAME} - Systems Developer & Game Developer`,
-  description: `The official portfolio of ${DEVELOPER_NAME}. Building Roblox frameworks and scaling viral game systems since ${DEVELOPER_START_YEAR}. Open for contracts and commissions.`,
+  description: `The official portfolio of ${USERNAME}. Building Roblox frameworks and scaling viral game systems since ${DEVELOPER_SINCE}. Open for contracts and commissions.`,
 
   lang: "en",
   themeColor: "#1e272e",
@@ -61,21 +71,30 @@ export const siteConfig: SiteConfig = {
   },
 
   developer: {
-    name: DEVELOPER_NAME,
-    startYear: DEVELOPER_START_YEAR,
+    username: USERNAME,
+    firstName: "Xinrui",
+    lastName: "Yang",
+    preferredName: "Sinray",
+    since: DEVELOPER_SINCE,
   },
 
   navigation: {
     main: [
-      { title: "Projects", href: "/projects/" },
-      { title: "Pricing", href: "/pricing/" },
-      { title: "About", href: "/about/" },
-      { title: "Blog", href: "/blog/" },
+      { label: "Projects", href: "/projects/" },
+      { label: "Profile", href: "/profile/" },
+      { label: "Blog", href: "/blog/" },
+      { label: "Contact", href: "/contact/" },
     ],
     footer: [
-      { title: "Uses", href: "/uses/" },
-      { title: "Privacy", href: "/privacy/" },
-      { title: "Terms", href: "/terms/" },
+      {
+        label: "Resume",
+        href: `/${FIRST_NAME}_${LAST_NAME}_Resume.pdf`,
+        download: "",
+      },
+      {
+        label: "Source",
+        href: "https://github.com/s-ray9/personal-portfolio",
+      },
     ],
   },
 
