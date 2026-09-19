@@ -54,6 +54,8 @@ const DEVELOPER_SINCE = 2019;
 const SITE_NAME = USERNAME;
 const COPYRIGHT_YEAR = 2026;
 
+const RESUME_HREF = `/${PREFERRED_NAME}_${LAST_NAME}_Resume.pdf`;
+
 export const siteConfig: SiteConfig = {
   name: SITE_NAME,
   copyrightYear: COPYRIGHT_YEAR,
@@ -83,18 +85,12 @@ export const siteConfig: SiteConfig = {
       { label: "Projects", href: "/projects/" },
       { label: "Profile", href: "/profile/" },
       { label: "Blog", href: "/blog/" },
+      { label: "Resume", href: RESUME_HREF },
       { label: "Contact", href: "/contact/" },
     ],
     footer: [
-      {
-        label: "Resume",
-        href: `/${PREFERRED_NAME}_${LAST_NAME}_Resume.pdf`,
-        download: "",
-      },
-      {
-        label: "Source",
-        href: "https://github.com/s-ray9/personal-portfolio",
-      },
+      { label: "Resume", href: RESUME_HREF },
+      { label: "Source", href: "https://github.com/s-ray9/personal-portfolio" },
     ],
   },
 
@@ -102,7 +98,7 @@ export const siteConfig: SiteConfig = {
     {
       platform: "linkedin",
       label: "LinkedIn",
-      url: "https://www.linkedin.com/in/sinray-yang-b65339411",
+      url: "https://www.linkedin.com/in/sinray-yang",
     },
     { platform: "github", label: "GitHub", url: "https://github.com/s-ray9" },
     {

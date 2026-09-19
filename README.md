@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="public/og-image.png" alt="s_ray9: systems developer, game developer." width="850">
+  <img src="public/og-image.png" alt="s_ray9: systems developer, game developer.">
 </p>
 
 <h1 align="center">Personal Portfolio</h1>
 
 <p align="center">
-The open-source repository for my personal portfolio website, showcasing my work in software architecture, game development, and technical writing.
+  The open-source repository for my personal portfolio website, showcasing my work in software architecture, game development, and technical writing.
 </p>
 
 <p align="center">
