@@ -60,7 +60,7 @@ export const siteConfig: SiteConfig = {
   builtWith: "Built with Astro, TypeScript, Three.js, and Tailwind CSS.",
 
   title: `${SITE_NAME} - Systems Developer & Game Developer`,
-  description: `The official portfolio of ${USERNAME}. Building Roblox frameworks and scaling viral game systems since ${DEVELOPER_SINCE}. Open for contracts and commissions.`,
+  description: `The official portfolio of ${PREFERRED_NAME}. Building Roblox frameworks and scaling viral game systems since ${DEVELOPER_SINCE}. Open for contracts and commissions.`,
 
   lang: "en",
   themeColor: "#1e272e",
@@ -88,7 +88,7 @@ export const siteConfig: SiteConfig = {
     footer: [
       {
         label: "Resume",
-        href: `/${FIRST_NAME}_${LAST_NAME}_Resume.pdf`,
+        href: `/${PREFERRED_NAME}_${LAST_NAME}_Resume.pdf`,
         download: "",
       },
       {
@@ -99,16 +99,16 @@ export const siteConfig: SiteConfig = {
   },
 
   socials: [
+    {
+      platform: "linkedin",
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/sinray-yang-b65339411",
+    },
     { platform: "github", label: "GitHub", url: "https://github.com/s-ray9" },
     {
       platform: "youtube",
       label: "YouTube",
       url: "https://www.youtube.com/@s_ray9",
-    },
-    {
-      platform: "linkedin",
-      label: "LinkedIn",
-      url: "https://www.linkedin.com/in/xinrui-yang-b65339411",
     },
   ],
 } as const;
