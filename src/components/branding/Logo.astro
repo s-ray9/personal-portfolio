@@ -5,9 +5,7 @@ interface Props {
   class?: string;
 }
 
-const { class: className = "" } = Astro.props;
+const { class: className } = Astro.props;
 ---
 
-<span class={cn(className)}>
-  <img src="/favicon.svg" alt="" class="size-full" aria-hidden="true" />
-</span>
+<img src="/favicon.svg" alt="" aria-hidden="true" class={cn(className)} />
