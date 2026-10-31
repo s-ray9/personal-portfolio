@@ -1,18 +1,10 @@
-.DS_Store
-[Dd]esktop.ini
-Thumbs.db
-
-.idea/
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
-!.vscode/tasks.json
-!.vscode/launch.json
 
 node_modules/
-dist/
 .astro/
 .vercel/
+dist/
 
-*.log
-.env*
+pnpm-debug.log
