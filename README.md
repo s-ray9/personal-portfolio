@@ -1,53 +1,65 @@
-<p align="center">
-  <img src="public/og-image.png" alt="s_ray9: systems developer, game developer.">
-</p>
+![s_ray9: systems developer, game developer.][banner] 
 
-<h1 align="center">Personal Portfolio</h1>
+# s_ray9
 
-<p align="center">
-  The open-source repository for my personal portfolio website, showcasing my work in software architecture, game development, and technical writing.
-</p>
+[![Website][website-badge]][website] [![License][license-badge]][license]
 
-<p align="center">
-  <a href="https://s-ray9.vercel.app" target="_blank"><img src="https://img.shields.io/badge/Vercel-live-success?style=flat-square&logo=vercel&logoColor=white&labelColor=000000" alt="Vercel"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/s-ray9/personal-portfolio?style=flat-square&color=blue&label=License&labelColor=24292e" alt="License"></a>
-</p>
+Personal portfolio featuring work experience, personal projects, and technical blogs.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Astro-ff5d01?style=flat-square&logo=astro&logoColor=white" alt="Astro">
-  <img src="https://img.shields.io/badge/TypeScript-3178c6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
-  <img src="https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=three.js&logoColor=white" alt="Three.js">
-  <img src="https://img.shields.io/badge/Tailwind_CSS-06b6d4?style=flat-square&logo=tailwind-css&logoColor=white" alt="Tailwind CSS">
-</p>
+## Tech stack
 
----
+![TypeScript][typescript-badge] ![Astro][astro-badge] ![Three.js][threejs-badge] ![Tailwind CSS][tailwind-css-badge] ![pnpm][pnpm-badge]
 
-## Development
+## Getting started
 
-### Local Setup
+### Prerequisites
+
+- Git
+- Node.js (v24.x)
+- pnpm (v12.16.1+)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/s-ray9/personal-portfolio.git
+   cd personal-portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+3. Start the local development server:
+   ```bash
+   pnpm dev
+   ```
+
+### Development
 
 ```bash
-# Clone the repository
-git clone https://github.com/s-ray9/personal-portfolio.git
-cd personal-portfolio
-
-# Install dependencies
-pnpm install
+pnpm dev
 ```
 
-### Usage
+### Build
 
 ```bash
-# Run development server
-pnpm dev
-
-# Compile production build
 pnpm build
-
-# Preview production build
 pnpm preview
 ```
 
 ## License
 
-Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE] for more information.
+
+[banner]: public/og-image.png
+[license]: LICENSE
+[website]: https://s-ray9.vercel.app
+[website-badge]: https://deploy-badge.vercel.app/?url=https://s-ray9.vercel.app&name=Website&logo=vercel
+[license-badge]: https://img.shields.io/github/license/s-ray9/personal-portfolio?color=blue&label=License&logo=opensourceinitiative&logoColor=white
+[typescript-badge]: https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white
+[astro-badge]: https://img.shields.io/badge/Astro-ff5d01?logo=astro&logoColor=white
+[threejs-badge]: https://img.shields.io/badge/Three.js-000000?logo=three.js&logoColor=white
+[tailwind-css-badge]: https://img.shields.io/badge/Tailwind_CSS-38bdf8?logo=tailwind-css&logoColor=white
+[pnpm-badge]: https://img.shields.io/badge/pnpm-f9ad00?logo=pnpm&logoColor=white
