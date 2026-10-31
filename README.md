@@ -33,21 +33,31 @@ Personal portfolio featuring work experience, personal projects, and technical b
    pnpm install
    ```
 
-3. Start the local development server:
-   ```bash
-   pnpm dev
-   ```
-
 ### Development
+
+Start the local development server:
 
 ```bash
 pnpm dev
 ```
 
+Format the code:
+
+```bash
+pnpm format
+```
+
 ### Build
+
+Build the project:
 
 ```bash
 pnpm build
+```
+
+Preview the production build locally:
+
+```bash
 pnpm preview
 ```
 
