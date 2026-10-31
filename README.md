@@ -1,4 +1,4 @@
-![s_ray9: systems developer, game developer.][banner] 
+![s_ray9: systems developer, game developer.][banner]
 
 # s_ray9
 
@@ -15,18 +15,20 @@ Personal portfolio featuring work experience, personal projects, and technical b
 ### Prerequisites
 
 - Git
-- Node.js (v24.x)
+- Node.js (v26.x)
 - pnpm (v12.16.1+)
 
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/s-ray9/personal-portfolio.git
    cd personal-portfolio
    ```
 
 2. Install dependencies:
+
    ```bash
    pnpm install
    ```
