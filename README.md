@@ -2,13 +2,18 @@
 
 # s_ray9
 
-[![Website][website-badge]][website] [![License][license-badge]][license]
+[![Website][website-badge]][website]
+[![License][license-badge]][license]
 
 Personal portfolio featuring work experience, personal projects, and technical blogs.
 
 ## Tech stack
 
-![TypeScript][typescript-badge] ![Astro][astro-badge] ![Three.js][threejs-badge] ![Tailwind CSS][tailwind-css-badge] ![pnpm][pnpm-badge]
+![TypeScript][typescript-badge]
+![Astro][astro-badge]
+![Three.js][threejs-badge]
+![Tailwind CSS][tailwind-css-badge]
+![pnpm][pnpm-badge]
 
 ## Getting started
 
