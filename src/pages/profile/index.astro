@@ -1,0 +1,145 @@
+---
+import { siteConfig } from "@config/site";
+import Layout from "@layouts/Layout.astro";
+
+const { preferredName, firstName, lastName, username, since } =
+  siteConfig.developer;
+
+const youtube = siteConfig.socials.find(
+  ({ platform }) => platform === "youtube",
+);
+
+const experience = [
+  {
+    role: "Lead Programmer, Unknown Games",
+    period: "Sept. 2026 – present",
+    summary:
+      "Building the game’s networking engine with client-side prediction and server reconciliation, along with data saving, ore replication, inventory synchronization and a stateful ore system.",
+  },
+  {
+    role: "Open-source contributor, NVIDIA V2D Challenge",
+    period: "Sept. 2026 – present",
+    summary:
+      "Contributing code and reviewing pull requests on a 10-person university team’s entry for NVIDIA’s V2D computer vision challenge.",
+  },
+];
+
+const skills = [
+  {
+    label: "Languages",
+    items: "Java, TypeScript, Python, C++, Luau, GLSL, HTML/CSS",
+  },
+  { label: "Frontend", items: "Astro, Tailwind CSS, Three.js" },
+  {
+    label: "Backend",
+    items:
+      "Data persistence, server-side validation, bandwidth optimization, network replication, lag compensation",
+  },
+  {
+    label: "Graphics",
+    items:
+      "OpenGL, procedural generation, particle systems, boids simulation, spring physics, Bézier and spline curves",
+  },
+  {
+    label: "Machine learning",
+    items: "PyTorch, OpenCV, Ultralytics, NumPy, pandas, scikit-learn",
+  },
+  {
+    label: "Tools",
+    items:
+      "Git, GitHub Actions, Linux, WSL, Vercel, Roblox Studio, Rojo, Blender, VS Code, Neovim",
+  },
+];
+---
+
+<Layout
+  title={`Profile | ${siteConfig.name}`}
+  description="About s_ray9: a developer building systems where software, simulation and mathematics meet."
+>
+  <section class="flex max-w-2xl flex-col gap-6">
+    <h1>Profile</h1>
+    <p>
+      I’m {preferredName} ({firstName}) {lastName}, also known as {username}. I
+      build systems where software, simulation and mathematics meet.
+    </p>
+    <p>
+      I’ve been programming since {since}, mostly in Luau for Roblox, where I’ve
+      built shooters, obbies and survival games. Along the way I’ve worked with
+      inverse kinematics, projectile trajectories and scope parallax math. I
+      also use Python, TypeScript, Java and C++.
+    </p>
+    <p>
+      My current projects are a tank game with shadow projection, a Roblox
+      framework, and machine learning research on sleep data. I’m interested in
+      robotics and mechatronics, and I track my coding time with Hack Club’s
+      Hackatime.
+    </p>
+
+    <h2 class="text-2xl">Experience</h2>
+    <ul class="flex flex-col gap-4">
+      {
+        experience.map(({ role, period, summary }) => (
+          <li>
+            <p>{role}</p>
+            <p class="text-sm text-fg-secondary">{period}</p>
+            <p>{summary}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2 class="text-2xl">Highlights</h2>
+    <ul class="list-disc pl-6">
+      <li>
+        Founder and president of my school’s Coding Club and STEAM IC, with more
+        than 80 members.
+      </li>
+      <li>
+        Four-time Waterloo CEMC distinction, in the top 25% of contestants.
+      </li>
+      <li>
+        Scored a 5 on the AP Computer Science Principles exam through
+        self-study.
+      </li>
+    </ul>
+
+    <h2 class="text-2xl">Skills</h2>
+    <dl class="flex flex-col gap-3">
+      {
+        skills.map(({ label, items }) => (
+          <div>
+            <dt class="text-sm text-fg-secondary">{label}</dt>
+            <dd>{items}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <h2 class="text-2xl">YouTube</h2>
+    <p>
+      My channel covers my Roblox work, especially Gun Simulator FPS. I showcase
+      projects and make tutorials. It has over 739K views and peaked at 3.35K
+      subscribers. It has been quiet for a few years, but the videos are still
+      up.
+    </p>
+    <iframe
+      class="aspect-video w-full rounded-2xl"
+      src="https://www.youtube-nocookie.com/embed/videoseries?list=UU9T8r00QZOrhakQDfkwCBhg"
+      title="Videos from s_ray9 on YouTube"
+      loading="lazy"
+      allow="encrypted-media; picture-in-picture"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen></iframe>
+    {
+      youtube && (
+        <a
+          href={youtube.url}
+          class="text-primary underline"
+          rel="noopener noreferrer"
+        >
+          Watch on YouTube
+        </a>
+      )
+    }
+  </section>
+</Layout>

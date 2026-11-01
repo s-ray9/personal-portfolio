@@ -1,0 +1,33 @@
+---
+import { siteConfig } from "@config/site";
+import Layout from "@layouts/Layout.astro";
+---
+
+<Layout
+  title={`Contact | ${siteConfig.name}`}
+  description="How to reach s_ray9 for contracts, commissions and collaboration."
+>
+  <section class="flex max-w-2xl flex-col gap-6">
+    <h1>Contact</h1>
+    <p>
+      I’m open to contracts and commissions, and I’m happy to talk about Roblox
+      systems, graphics or machine learning. The links below are the best way to
+      reach me.
+    </p>
+    <ul class="flex flex-col gap-2">
+      {
+        siteConfig.socials.map(({ label, url }) => (
+          <li>
+            <a
+              href={url}
+              class="text-primary underline"
+              rel="noopener noreferrer"
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

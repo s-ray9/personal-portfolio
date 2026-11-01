@@ -1,0 +1,48 @@
+---
+import { siteConfig } from "@config/site";
+import Layout from "@layouts/Layout.astro";
+
+interface Post {
+  title: string;
+  date: string;
+  summary: string;
+  href: string;
+}
+
+const posts: Post[] = [];
+---
+
+<Layout
+  title={`Blog | ${siteConfig.name}`}
+  description="Writing by s_ray9 about Roblox systems, graphics programming and machine learning research."
+>
+  <section class="flex max-w-2xl flex-col gap-6">
+    <h1>Blog</h1>
+    {
+      posts.length === 0 ? (
+        <div class="flex flex-col gap-2 surface-glass p-6">
+          <h2 class="text-2xl">No posts yet</h2>
+          <p>
+            I haven’t published anything here yet. When I do, it will be about
+            the things I build, such as Roblox systems, graphics programming and
+            machine learning research.
+          </p>
+        </div>
+      ) : (
+        <ul class="flex flex-col gap-4">
+          {posts.map(({ title, date, summary, href }) => (
+            <li class="flex flex-col gap-2 surface-glass p-6">
+              <h2 class="text-2xl">
+                <a href={href} class="text-primary underline">
+                  {title}
+                </a>
+              </h2>
+              <p class="text-sm text-fg-secondary">{date}</p>
+              <p>{summary}</p>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+</Layout>

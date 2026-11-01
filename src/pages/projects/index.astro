@@ -1,0 +1,96 @@
+---
+import { siteConfig } from "@config/site";
+import Layout from "@layouts/Layout.astro";
+
+interface Project {
+  name: string;
+  description: string;
+  details: string;
+  href?: string;
+}
+
+const projects: Project[] = [
+  {
+    name: "Rainfall",
+    description:
+      "A lightweight Roblox framework written in Luau, with a module registry, proxy-based state management, structured logging, a ballistics engine, and companion libraries for animation and cleanup.",
+    details: "Luau, Rojo",
+    href: "https://github.com/s-ray9/rainfall",
+  },
+  {
+    name: "Sleep Cognition ML",
+    description:
+      "Independent research on whether feature-importance rankings can be trusted on small, imbalanced clinical datasets, using sleep recordings to predict future cognitive impairment.",
+    details: "Python, scikit-learn",
+    href: "https://github.com/s-ray9/sleep-cognition-ml",
+  },
+  {
+    name: "Gun Simulator FPS",
+    description:
+      "A quick, simple shooter with guns that have unique stats, a leaderboard, saved player data, sniper scopes, and movement such as sprinting, leaning, proning, crouching and sliding. I showcased it and made tutorials about it on YouTube.",
+    details: "Roblox, Luau",
+    href: "https://www.roblox.com/games/12519247792",
+  },
+  {
+    name: "Tank game",
+    description:
+      "A tank game with shadow projection. This is what I’m working on right now.",
+    details: "In progress",
+  },
+  {
+    name: "Brink",
+    description:
+      "A zombie survival game about factions, with raiding, trading and conflict.",
+    details: "Roblox, Luau",
+    href: "https://www.roblox.com/games/10810472579",
+  },
+  {
+    name: "FavourLink",
+    description:
+      "A Roblox Studio prototype that calls the Gemini API over HTTP using few-shot prompting. It placed second out of 11 teams at Spark4STEM SparkHacks.",
+    details: "Luau, Gemini API",
+  },
+  {
+    name: "Flow",
+    description:
+      "A work-in-progress physics simulator built for a school project.",
+    details: "Java",
+    href: "https://github.com/s-ray9/flow",
+  },
+  {
+    name: "Personal portfolio",
+    description:
+      "This website, with a background of raymarched metaballs drawn in a WebGL2 shader.",
+    details: "Astro, TypeScript, Tailwind CSS, WebGL",
+    href: "https://github.com/s-ray9/personal-portfolio",
+  },
+];
+---
+
+<Layout
+  title={`Projects | ${siteConfig.name}`}
+  description="Projects by s_ray9: Roblox games and frameworks, machine learning research, a physics simulator and this website."
+>
+  <section class="flex flex-col gap-8">
+    <h1>Projects</h1>
+    <ul class="grid gap-4 md:grid-cols-2">
+      {
+        projects.map(({ name, description, details, href }) => (
+          <li class="flex flex-col gap-2 surface-glass p-6">
+            <h2 class="text-2xl">
+              {href ? (
+                <a href={href} class="text-primary underline">
+                  {name}
+                </a>
+              ) : (
+                name
+              )}
+            </h2>
+            <p>{description}</p>
+            <p class="text-sm text-fg-secondary">{details}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</Layout>

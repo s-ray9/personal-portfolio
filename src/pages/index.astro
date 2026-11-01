@@ -1,4 +1,5 @@
 ---
+import { siteConfig } from "@config/site";
 import Layout from "@layouts/Layout.astro";
 ---
 
@@ -6,10 +7,12 @@ import Layout from "@layouts/Layout.astro";
   <section
     class="flex flex-1 flex-col items-center justify-center gap-4 text-center"
   >
-    <h1>Coming Soon</h1>
-    <p class="max-w-md">
-      My new personal portfolio is currently under construction. Check back soon
-      for updates.
+    <h1>{siteConfig.name}</h1>
+    <p class="text-lg">Systems developer and game developer.</p>
+    <p class="max-w-xl">
+      Hi, I’m {siteConfig.developer.preferredName}. I build Roblox frameworks
+      and games, simulations, and machine learning research tools. Right now I’m
+      building a tank game with shadow projection.
     </p>
   </section>
 </Layout>
