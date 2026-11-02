@@ -15,6 +15,18 @@ Personal portfolio featuring work experience, personal projects, and technical b
 ![Tailwind CSS][tailwind-css-badge]
 ![pnpm][pnpm-badge]
 
+## Features
+
+- Home, projects, profile, blog, contact, and 404 pages
+- PDF resume
+- Interactive WebGL background
+- Reduced-motion support
+- Self-hosted fonts
+- Page titles and descriptions for browser tabs and search results
+- `robots.txt` for search engine crawlers
+- Open Graph and Twitter card metadata for link previews
+- Theme-adaptive favicon
+
 ## Getting started
 
 ### Prerequisites
@@ -22,6 +34,9 @@ Personal portfolio featuring work experience, personal projects, and technical b
 - Git
 - Node.js (v26.x)
 - pnpm (v12.16.1+)
+
+> [!TIP]
+> This repository pins its Node.js version in a `.node-version` file. A version manager such as [fnm](https://github.com/Schniz/fnm) can read that file and switch to the right version for you, which is the easiest way to match the Node.js prerequisite above. With fnm, run `fnm use` in the project folder, or add `--use-on-cd` to your `fnm env` shell setup to switch automatically.
 
 ### Installation
 
