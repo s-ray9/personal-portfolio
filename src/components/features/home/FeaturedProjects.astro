@@ -1,0 +1,21 @@
+---
+import Primitive from "@components/ui/Primitive.astro";
+import ProjectCard from "@components/ui/ProjectCard.astro";
+import { featuredProjects } from "@config/projects";
+---
+
+<section class="flex flex-col gap-6" aria-labelledby="featured-projects">
+  <div class="flex items-baseline justify-between gap-4">
+    <h2 id="featured-projects" class="text-2xl">Featured projects</h2>
+    <Primitive
+      as="a"
+      href="/projects/"
+      class="text-sm text-fg-secondary hover:text-fg-primary"
+    >
+      All projects <span aria-hidden="true">→</span>
+    </Primitive>
+  </div>
+  <ul class="grid gap-4 md:grid-cols-3">
+    {featuredProjects.map((project) => <ProjectCard {...project} />)}
+  </ul>
+</section>

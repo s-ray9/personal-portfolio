@@ -1,0 +1,41 @@
+---
+import Primitive from "@components/ui/Primitive.astro";
+import StatusDot from "@components/ui/StatusDot.astro";
+import { currentProject } from "@config/projects";
+import { siteConfig } from "@config/site";
+---
+
+<section
+  class="flex flex-col items-center justify-center gap-6 py-16 text-center md:min-h-[60dvh]"
+>
+  {
+    currentProject && (
+      <p class="inline-flex items-center gap-2 rounded-full border border-border-primary/25 bg-bg-secondary/25 px-3 py-1 text-sm backdrop-blur-xl">
+        <StatusDot />
+        <span class="text-fg-secondary">Currently building</span>
+        <span>{currentProject.name}</span>
+      </p>
+    )
+  }
+
+  <h1>{siteConfig.name}</h1>
+  <p class="text-xl">{siteConfig.tagline}</p>
+  <p class="max-w-xl">{siteConfig.intro}</p>
+
+  <ul class="flex flex-wrap justify-center gap-3">
+    {
+      siteConfig.socials.map(({ label, url }) => (
+        <li>
+          <Primitive
+            as="a"
+            href={url}
+            class="button px-4 py-2"
+            rel="noopener noreferrer"
+          >
+            {label}
+          </Primitive>
+        </li>
+      ))
+    }
+  </ul>
+</section>

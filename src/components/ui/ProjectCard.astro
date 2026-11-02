@@ -1,0 +1,46 @@
+---
+import Primitive from "@components/ui/Primitive.astro";
+import type { Project } from "@config/projects";
+import { cn } from "@utils/cn";
+
+interface Props extends Project {
+  heading?: "h2" | "h3";
+  class?: string;
+}
+
+const {
+  name,
+  description,
+  details,
+  href,
+  heading: Heading = "h3",
+  class: className,
+} = Astro.props;
+---
+
+<li
+  class={cn(
+    "group relative flex flex-col gap-2 surface-glass p-6 transition-colors",
+    href && "hover:border-border-primary/60",
+    className,
+  )}
+>
+  <Heading class="text-lg">
+    {
+      href ? (
+        <Primitive
+          as="a"
+          href={href}
+          class="group-hover:text-primary after:absolute after:inset-0"
+          rel="noopener noreferrer"
+        >
+          {name}
+        </Primitive>
+      ) : (
+        name
+      )
+    }
+  </Heading>
+  <p>{description}</p>
+  <p class="mt-auto pt-2 text-sm text-fg-secondary">{details}</p>
+</li>

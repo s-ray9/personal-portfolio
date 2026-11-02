@@ -24,6 +24,9 @@ export interface SiteConfig {
   readonly title: string;
   readonly description: string;
 
+  readonly tagline: string;
+  readonly intro: string;
+
   readonly lang: string;
   readonly themeColor: string;
   readonly backgroundColor: string;
@@ -63,6 +66,9 @@ export const siteConfig: SiteConfig = {
 
   title: `${SITE_NAME} - Systems Developer & Game Developer`,
   description: `The official portfolio of ${PREFERRED_NAME}. Building Roblox frameworks and scaling viral game systems since ${DEVELOPER_SINCE}. Open for contracts and commissions.`,
+
+  tagline: "Systems developer and game developer.",
+  intro: `Hi, I’m ${PREFERRED_NAME}. I build Roblox frameworks and games, simulations, and machine learning research tools.`,
 
   lang: "en",
   themeColor: "#1e272e",
